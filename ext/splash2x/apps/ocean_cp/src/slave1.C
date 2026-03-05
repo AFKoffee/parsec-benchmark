@@ -26,7 +26,7 @@ EXTERN_ENV
 #include <stdlib.h>
 #include "decs.h"
 
-void slave()
+void *slave(void *arg)
 {
    long i;
    long j;

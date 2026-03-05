@@ -25,7 +25,7 @@
 
 #include "decs.h"
 
-void slave()
+void *slave(void *)
 {
    long i;
    long j;

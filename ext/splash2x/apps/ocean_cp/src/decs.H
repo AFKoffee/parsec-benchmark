@@ -215,7 +215,7 @@ void copy_black(long k, long procid);
 /*
  * slave1.C
  */
-void slave(void);
+void *slave(void *);
 
 /*
  * slave2.C

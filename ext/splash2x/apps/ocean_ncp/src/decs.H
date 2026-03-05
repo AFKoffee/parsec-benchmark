@@ -271,7 +271,7 @@ void putz(long k, long my_num);
 /*
  * slave1.C
  */
-void slave(void);
+void *slave(void *);
 
 /*
  * slave2.C

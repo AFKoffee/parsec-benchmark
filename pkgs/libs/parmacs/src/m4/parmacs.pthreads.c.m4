@@ -183,7 +183,7 @@ define(CREATE, `{
 		}
 	}
 
-	$1();
+	$1(NULL);
 }')
 
 define(MAIN_INITENV, `{;}')
