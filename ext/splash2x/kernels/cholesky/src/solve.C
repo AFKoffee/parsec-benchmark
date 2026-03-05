@@ -332,7 +332,7 @@ int main(int argc, char *argv[])
 }
 
 
-void Go()
+void *Go(void *arg)
 {
   long MyNum;
   struct LocalCopies *lc;

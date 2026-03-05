@@ -276,7 +276,7 @@ void CreatePermutation(long n, long *PERM, long permutation_method);
 /*
  * solve.C
  */
-void Go(void);
+void *Go(void *);
 void PlaceDomains(long P);
 void ComposePerm(long *PERM1, long *PERM2, long n);
 
