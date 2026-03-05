@@ -279,7 +279,7 @@ int main(int argc, char **argv)
 #endif
 } /* main.c */
 
-void WorkStart() /* routine that each created process starts at;
+void *WorkStart(void *arg) /* routine that each created process starts at;
                     it simply calls the timestep routine */
 {
     long ProcID;

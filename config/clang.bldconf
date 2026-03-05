@@ -10,7 +10,7 @@ export GNUTOOL_HOME="/usr"
 export BINARY_PREFIX=""
 
 if [ -z "$HOSTCC" ]; then
-  export HOSTCC=clang
+  export HOSTCC=gcc
 fi
 if [ -z "$M4" ]; then
   export M4=m4

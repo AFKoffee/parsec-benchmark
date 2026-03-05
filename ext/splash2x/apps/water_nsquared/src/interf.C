@@ -15,6 +15,7 @@
 /*************************************************************************/
 
 EXTERN_ENV
+#include <stdio.h>
 #include "math.h"
 #include "mdvar.h"
 #include "water.h"

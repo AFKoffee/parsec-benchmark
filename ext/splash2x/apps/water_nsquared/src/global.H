@@ -83,4 +83,4 @@ void CORREC(double *PCC, long NOR1, long ProcID);
 void SYSCNS(void);
 
 /* water.C */
-void WorkStart(void);
+void *WorkStart(void * arg);
