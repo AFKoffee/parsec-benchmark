@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# clang.bldconf - configuration file for PARSEC
+
+# Default parallelization is pthreads
+source ${PARSECDIR}/ext/splash2x/apps/water_spatial/parsec/gcc-pthreads.bldconf
+
+
