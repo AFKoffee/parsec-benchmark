@@ -11,13 +11,20 @@
 
 if [ -z "${WALI_TOOLCHAIN}" ]; 
 then
-  echo "Expected 'WALI_TOOLCHAIN' environment variable to be set"
+  echo "Error: Expected 'WALI_TOOLCHAIN' environment variable to be set"
   exit -1
 else
   old_opts=$(set +o)
   source "${WALI_TOOLCHAIN}"
   # prevents WALI's -euo options to propagate into parent script
   eval "$old_opts"
+fi
+
+if [ -n "${WASMGRIND_HOOKS_LDFLAGS}${WASMGRIND_HOOKS_LIB}" ] && \
+  { [ -z "${WASMGRIND_HOOKS_LDFLAGS}" ] || [ -z "${WASMGRIND_HOOKS_LIB}" ]; }; 
+then
+  echo "Error: WASMGRIND_HOOKS_LDFLAGS and WASMGRIND_HOOKS_LIB must either both be set or both be unset."
+  exit 1
 fi
 
 if [ -z "$HOSTCC" ]; then
@@ -51,10 +58,10 @@ export CFLAGS=" $CFLAGS ${WALI_COMMON_CFLAGS} -std=c17"
 export CXXFLAGS="$CXXFLAGS ${WALI_COMMON_CXXFLAGS} -fpermissive -fno-exceptions -std=c++17"
 export CPPFLAGS=""
 export CXXCPPFLAGS=""
-export LIBS=""
+export LIBS="${WASMGRIND_HOOKS_LIB}"
 export EXTRA_LIBS=""
 export PARMACS_MACRO_FILE="pthreads"
-export LDFLAGS="${WALI_COMMON_LDFLAGS}"
+export LDFLAGS="${WALI_COMMON_LDFLAGS} ${WASMGRIND_HOOKS_LDFLAGS}"
 # Add PARSEC version to compiler flags
 if [ -f "${PARSECDIR}/version" ]; then
   CFLAGS="${CFLAGS} -DPARSEC_VERSION=$(${CAT} ${PARSECDIR}/version)"
