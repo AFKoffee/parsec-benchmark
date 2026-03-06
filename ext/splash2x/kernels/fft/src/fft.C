@@ -104,7 +104,7 @@ double ck1;
 double ck3;                        /* checksums for testing answer */
 long pad_length;
 
-void SlaveStart(void);
+void *SlaveStart(void *arg);
 double TouchArray(double *x, double *scratch, double *u, double *upriv, long MyFirst, long MyLast);
 double CheckSum(double *x);
 void InitX(double *x);
@@ -436,7 +436,7 @@ int main(int argc, char *argv[])
 }
 
 
-void SlaveStart()
+void *SlaveStart(void *arg)
 {
   long i;
   long MyNum;

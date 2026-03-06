@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# wali.bldconf - configuration file for PARSEC
+
+# Default parallelization is pthreads
+source ${PARSECDIR}/ext/splash2x/kernels/fft/parsec/clang.bldconf
+
+

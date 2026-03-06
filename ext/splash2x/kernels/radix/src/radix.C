@@ -103,7 +103,7 @@ long dostats = 0;
 long test_result = 0;
 long doprint = 0;
 
-void slave_sort(void);
+void *slave_sort(void *arg);
 double product_mod_46(double t1, double t2);
 double ran_num_init(unsigned long k, double b, double t);
 long get_max_digits(long max_key);
@@ -402,7 +402,7 @@ int main(int argc, char *argv[])
 #endif
 }
 
-void slave_sort()
+void *slave_sort(void *arg)
 {
    long i;
    long MyNum;
