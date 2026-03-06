@@ -16,10 +16,10 @@ endif
 
 ifdef version
   ifeq "$(version)" "pthreads"
-    M4_SRC    = blackscholes.m4.cpp
+    M4_SRC    = blackscholes.m4.c
     CSRC      = $(M4_SRC)
     MT        = -DENABLE_THREADS
-    CXXFLAGS += -pthread
+    CFLAGS += -pthread
   endif
   ifeq "$(version)" "openmp"
     MT        = -DENABLE_OPENMP
@@ -54,12 +54,12 @@ ifdef double
 NCO = -DNCO=2
 endif
 
-CXXFLAGS += $(MT) $(NCO) $(FUNC) $(ERR) $(CSRC)
+CFLAGS += $(MT) $(NCO) $(FUNC) $(ERR) $(CSRC)
 
 all: $(TARGET)
 
 $(TARGET): clean $(CSRC)
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(LIBS) -o $(TARGET)
+	$(CC) $(CFLAGS) $(LDFLAGS) $(LIBS) -o $(TARGET)
 
 $(M4_SRC): $(SRC)
 	$(M4) $(M4_BASE)/$(MACROS) $< > $@

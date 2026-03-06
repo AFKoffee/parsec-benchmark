@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# wali.bldconf - file containing information necessary to build a
+#                        specific program of the PARSEC benchmark suite
+#                        with the WALI toolchain and pthreads
+
+source ${PARSECDIR}/pkgs/apps/blackscholes/parsec/clang.bldconf
