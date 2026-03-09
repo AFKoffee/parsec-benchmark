@@ -61,7 +61,7 @@ export CXXCPPFLAGS=""
 export LIBS="${WASMGRIND_HOOKS_LIB}"
 export EXTRA_LIBS=""
 export PARMACS_MACRO_FILE="pthreads"
-export LDFLAGS="${WALI_COMMON_LDFLAGS} ${WASMGRIND_HOOKS_LDFLAGS}"
+export LDFLAGS="${WALI_COMMON_LDFLAGS} ${USER_LDFLAGS} ${WASMGRIND_HOOKS_LDFLAGS}"
 # Add PARSEC version to compiler flags
 if [ -f "${PARSECDIR}/version" ]; then
   CFLAGS="${CFLAGS} -DPARSEC_VERSION=$(${CAT} ${PARSECDIR}/version)"
