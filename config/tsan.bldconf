@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# tsan.bldconf - file containing global information necessary to build
+#               PARSEC with clang and TSan
+#
+
+source ${PARSECDIR}/config/clang.bldconf
+
+export CFLAGS="${CFLAGS} -fsanitize=thread"
+export CXXFLAGS="${CXXFLAGS} -fsanitize=thread"
+export LDFLAGS="${LDFLAGS} -fsanitize=thread"

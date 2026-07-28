@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# tsan.bldconf - configuration file for PARSEC
+
+source ${PARSECDIR}/pkgs/libs/parmacs/parsec/clang.bldconf

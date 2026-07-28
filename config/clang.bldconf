@@ -29,15 +29,15 @@ export CPP="${TARGET_CROSS}clang-cpp"
 export CXXCPP=""
 
 # GNU Binutils
-export LD="${TARGET_CROSS}ld"
-export AS="${TARGET_CROSS}as"
-export AR="${TARGET_CROSS}ar"
-export RANLIB="${TARGET_CROSS}ranlib"
-export STRIP="${TARGET_CROSS}strip"
+export LD="${TARGET_CROSS}lld.ld"
+export AS="${TARGET_CROSS}llvm-as"
+export AR="${TARGET_CROSS}llvm-ar"
+export RANLIB="${TARGET_CROSS}llvm-ranlib"
+export STRIP="${TARGET_CROSS}llvm-strip"
 
 # Arguments to use
-export CFLAGS=" $CFLAGS -std=c17"
-export CXXFLAGS="$CXXFLAGS -fpermissive -fno-exceptions -std=c++17"
+export CFLAGS=" $CFLAGS -std=c17 -O0 -pthread -fdeclspec -fwasm-exceptions -Wno-implicit-function-declaration -Wno-int-conversion -Wno-incompatible-function-pointer-types -Wno-incompatible-pointer-types -Wno-nullability-completeness"
+export CXXFLAGS="$CXXFLAGS -fpermissive -fno-exceptions -std=c++17 -stdlib=libc++ -O0 -pthread -fdeclspec -fwasm-exceptions -Wno-implicit-function-declaration -Wno-int-conversion -Wno-incompatible-function-pointer-types -Wno-incompatible-pointer-types -Wno-nullability-completeness"
 export CPPFLAGS=""
 export CXXCPPFLAGS=""
 export LIBS=""

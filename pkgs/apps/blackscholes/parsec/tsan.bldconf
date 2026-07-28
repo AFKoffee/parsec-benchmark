@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# tsan.bldconf - file containing information necessary to build a
+#                specific program of the PARSEC benchmark suite
+#                with the clang and TSan
+
+source ${PARSECDIR}/pkgs/apps/blackscholes/parsec/clang.bldconf

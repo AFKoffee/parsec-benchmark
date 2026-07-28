@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# tsan.bldconf - configuration file for PARSEC
+
+# Default parallelization is pthreads
+source ${PARSECDIR}/ext/splash2x/apps/ocean_cp/parsec/clang.bldconf

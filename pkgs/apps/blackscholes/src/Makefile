@@ -20,6 +20,7 @@ ifdef version
     CSRC      = $(M4_SRC)
     MT        = -DENABLE_THREADS
     CFLAGS += -pthread
+    LDFLAGS := $(LDFLAGS) -lm
   endif
   ifeq "$(version)" "openmp"
     MT        = -DENABLE_OPENMP
